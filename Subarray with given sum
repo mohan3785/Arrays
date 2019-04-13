@@ -1,0 +1,25 @@
+#code o(n)^3
+
+import sys
+inp = sys.stdin.readlines()
+j = 1
+c = 2
+for i in range(0,int(inp[0])):
+    num,sum = inp[i+j].split()
+    lst = inp[i+c].split()
+    count = 0
+    for l in range(0,int(num)):
+        if count ==0:
+            summ = 0
+        for k in range(l,int(num)):
+            summ += int(lst[k])
+            if (summ == int(sum)):
+                print(l+1,k+1)
+                count += 1
+        if ( l == int(num)-1 and count ==0):
+            print("-1")
+    j += 1
+    c += 1
+    
+    
+    
